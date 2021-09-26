@@ -1,0 +1,44 @@
+// variaveis
+
+// local font
+// @font-face {
+// 	font-family: 'Open Sans';
+// 	font-style: normal;
+// 	font-weight: normal;
+// 	src: url('./assets/fonts/OpenSans-Regular.woff2') format('woff2'),
+// 		url('./assets/fonts/OpenSans-Regular.woff') format('woff');
+// }
+
+// google font
+@import url('https://fonts.googleapis.com/css2?family=Allan&display=swap');
+$mainBodyFont: 'Allan', cursive;
+
+// bootstrap
+@import '/node_modules/bootstrap/scss/functions';
+@import '/node_modules/bootstrap/scss/variables';
+@import '/node_modules/bootstrap/scss/mixins';
+
+// default
+html,
+body {
+	font-family: $mainBodyFont;
+	text-align: center;
+
+	@include media-breakpoint-up(xs) {
+		background-color: white;
+	}
+	@include media-breakpoint-up(sm) {
+		background-color: whitesmoke;
+	}
+	@include media-breakpoint-up(md) {
+		background-color: gray;
+	}
+	@include media-breakpoint-up(lg) {
+		background-color: red;
+	}
+	@include media-breakpoint-up(xl) {
+		background-color: blue;
+	}
+
+	background-image: url('/src/assets/images/background.jpeg');
+}
