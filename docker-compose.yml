@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  app:
+    container_name: wp-app-${CONTAINER_PREFIX}
+    build:
+      context: .
+
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+    command: npm run dev
+    
+    ports:
+      - ${APP_PORT}:9000
