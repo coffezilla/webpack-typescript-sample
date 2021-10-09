@@ -19,4 +19,3 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 COPY . .
 
-CMD ["npm", "run", "dev"]
