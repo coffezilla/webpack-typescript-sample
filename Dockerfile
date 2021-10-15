@@ -8,14 +8,22 @@
 
 FROM node:14
 
-WORKDIR /app
 
-COPY package.json /app/package.json
+# add `/app/node_modules/.bin` to the $PATH
+ENV PATH /app/frontend/node_modules/.bin:$PATH
+
+COPY ./frontend/package.json /app/frontend/package.json
+# COPY ./frontend/package-lock.json /app/frontend/package-lock.json
+
+COPY ./frontend/.eslintrc.js /app/frontend/.eslintrc.js
+COPY ./frontend/.prettierrc /app/frontend/.prettierrc
+COPY ./frontend/tsconfig.json /app/frontend/tsconfig.json
+COPY ./frontend/webpack.common.js /app/frontend/webpack.common.js
+COPY ./frontend/webpack.dev.js /app/frontend/webpack.dev.js
+COPY ./frontend/webpack.prod.js /app/frontend/webpack.prod.js
+
+WORKDIR /app/frontend
 
 RUN npm install
 
-# add `/app/node_modules/.bin` to the $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
-COPY . .
-
+CMD echo 'Image Builded - webpack-typescript-sample'

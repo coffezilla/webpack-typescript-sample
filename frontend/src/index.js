@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // style
 import './assets/style.scss';
 
-// typescript
+// typescript 
 import './index.ts';
 
 console.log('javascript');

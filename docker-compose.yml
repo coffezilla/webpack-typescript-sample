@@ -1,14 +1,13 @@
 version: '3.7'
 services:
   app:
-    container_name: wp-app-${CONTAINER_PREFIX}
     build:
       context: .
-
+    container_name: wp-app-${CONTAINER_PREFIX}
+    restart: always
     volumes:
-      - .:/app
-      - /app/node_modules
-
+      - "./frontend/public:/app/frontend/public"
+      - "./frontend/src:/app/frontend/src"
     command: npm run dev
     
     ports:
